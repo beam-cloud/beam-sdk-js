@@ -1,12 +1,12 @@
 {
   "name": "beam-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Beam Sdk for Javascript",
   "repository": "git@github.com:beam-cloud/beam-sdk-js.git",
   "author": "John Marshall <john@slai.io>",
   "license": "MIT",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "yarn build",
     "build": "tsc"
