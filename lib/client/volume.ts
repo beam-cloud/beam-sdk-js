@@ -12,7 +12,7 @@ export default class VolumeAPIClient {
   ): Promise<IServiceResponse<ISetupMultipartUploads>> {
     return HttpClient.request({
       method: "POST",
-      baseURL: this.baseUrl,
+      baseURL: VolumeAPIClient.baseUrl,
       url: `${volumeName}/multipart-upload-setup/`,
       data: {
         files: files,
@@ -28,8 +28,8 @@ export default class VolumeAPIClient {
   ): Promise<IServiceResponse<IMultipartUploadURL>> {
     return HttpClient.request({
       method: "POST",
-      baseURL: this.baseUrl,
-      url: `/multipart-upload-url/`,
+      baseURL: VolumeAPIClient.baseUrl,
+      url: `multipart-upload-url/`,
       data: {
         key: key,
         upload_id: uploadId,
@@ -45,8 +45,8 @@ export default class VolumeAPIClient {
   ): Promise<IServiceResponse<void>> {
     return HttpClient.request({
       method: "POST",
-      baseURL: this.baseUrl,
-      url: `/multipart-upload-complete/`,
+      baseURL: VolumeAPIClient.baseUrl,
+      url: `multipart-upload-complete/`,
       data: {
         key: key,
         upload_id: uploadId,
@@ -61,8 +61,8 @@ export default class VolumeAPIClient {
   public static async CancelMultipartUpload(key: string, uploadId: string): Promise<IServiceResponse<void>> {
     return HttpClient.request({
       method: "POST",
-      baseURL: this.baseUrl,
-      url: `/multipart-upload-cancel/`,
+      baseURL: VolumeAPIClient.baseUrl,
+      url: `multipart-upload-cancel/`,
       data: {
         key: key,
         upload_id: uploadId,
